@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>BPMN Editor</title>
+  <!-- CSS giao diện BPMN Canvas & Palette của bpmn-js -->
+  <link rel="stylesheet" href="node_modules/bpmn-js/dist/assets/diagram-js.css" />
+  <link rel="stylesheet" href="node_modules/bpmn-js/dist/assets/bpmn-font/css/bpmn.css" />
+  <style>
+    html, body, #canvas {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .buttons {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 100;
+      display: flex;
+      gap: 10px;
+    }
+    .buttons button {
+      padding: 8px 16px;
+      cursor: pointer;
+      font-family: sans-serif;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: white;
+      font-weight: 500;
+    }
+    .buttons button:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div id="canvas"></div>
+
+  <div class="buttons">
+    <button id="btn-import-bpmn">Import BPMN</button>
+    <input type="file" id="input-import-bpmn" accept=".bpmn, .xml" style="display: none;" />
+    <button id="btn-export-bpmn">Export BPMN</button>
+    <button id="btn-export-svg">Export SVG</button>
+    <button id="btn-export-png">Export PNG</button>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
